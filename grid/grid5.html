@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+  <style>
+    /* reset, common */
+    *{margin: 0; padding: 0;}
+    li{list-style:none; }
+    a{text-decoration: none; color: #000;}
+    button{border: 0;}
+    body{font-family: 'Nanum Gothic', sans-serif;}
+    .center{position: relative; width: 960px; margin: 0 auto;} /*공식!! - 최대폭 960px에 margin 으로 중앙정렬*/
+    .skip{font-size: 0; text-indent: -9999px; position: absolute; left:-9999px;}
+
+    .title{height: 150px; border-bottom: 1px  solid #006633; margin-bottom: 50px;}
+    .title h2{font-size: 40px; padding-top: 45px; font-weight: normal; color: #006633;}
+    .title h2::before{content: ''; display: inline-block; width: 20px; height: 50px;
+      background: #006633; margin-right: 20px; vertical-align: text-bottom;
+      /* vertical-align: text-bottom; -> 도형이 있을때 텍스트를 기준으로 정렬을 시키겠다.*/
+    }
+
+    .product-list{}
+    .product-list ul{overflow: hidden; margin: 0 -15px;}
+    /* !! 밑에 float: left;가있으므로  overflow: hidden;으로 클리어시켜줌!!!*/
+    /* 리스트 간의 여백(가운데)을 균등하게 하기위해선 margin: 0 -15px;로 값을 주면 됨! (공식!!)*/
+    .product-list ul li{float: left; width: 33.33%; height: 535px; text-align: center; margin-bottom: 30px;} /* text-align: center;-> 리스트 정렬시키기위함*/
+    .product-list ul li .img-box{
+      display: inline-block; position: relative; width: 300px; height: 340px;
+    } /* display: inline-block; -> 원래 블럭요소라서 인라인블럭으로 만들어줌! 그래서 .product-list ul li에 text-align: center;적용이 가능함!! */
+    .product-list ul li .img-box .wrap{
+      position: relative;
+      width: 300px; height: 300px; overflow: hidden;
+      border: 10px solid #006633; border-radius: 50%; box-sizing: border-box;
+    }/* border-radius: 50%; -> 원형값  */
+     /* border나 padding이 적용된경우 box-sizing: border-box;을 꼭 써줘야 기본값으로 사용됨!! (border,padding을 쓰면 꼭 box-sizing: border-box;을 써야함)*/
+    .product-list ul li .img-box .wrap img{width: 100%;}
+    .product-list ul li .img-box .wrap .over{
+      position: absolute; top: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5); opacity: 0;
+      transition: all 0.5s;
+    }/* .over는 원래 안보이는 성질임. 그래서 값을 저장하고 밑에 .wrap:hover .over 여기에 opacity값을 주면 효과가보임! */
+    .product-list ul li .img-box .wrap:hover .over{opacity: 1;}
+    .product-list ul li .img-box .wrap .over button{
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      color: #fff; background: none; font-size: 52px; cursor: pointer; outline: none;
+    } /*background: none;-> 폰트아이콘이 가지고있는 기본 색상 없애기!  font-size: 52px; cursor: pointer; outline: none;->부가적인 스타일 없애기*/
+      /* position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -> 크기를 모를때 가운데 정렬하는 방법*/
+    .product-list ul li .img-box > span{
+      position: absolute; left: 50%; bottom: 20px;
+      width: 60px; height: 60px; margin-left: -30px; /* margin-left: -30px;->크기를 알고있을때 가운데 정렬하는방법*/
+      background: #a3b940; color: #fff; border-radius: 50%;
+      line-height: 60px; text-transform: uppercase;
+    }
+
+    .product-list dl{
+      display: inline-block; width: 300px; /* display: inline-block;-> 현재 블럭요소라 인라인블럭요소로 바꿔줌 */
+      border-top: 1px solid #006633; border-bottom: 1px solid #006633;
+    }
+    .product-list dl dt{height: 90px; color: #006633;}
+    .product-list dl dt b{display: block; padding-top: 20px; font-size: 21px;} /*한글제품명 , b or span에 display: block을 해주면 라인개행이됨*/
+    .product-list dl dt span{font-size: 18px;} /*영문제품명*/
+    .product-list dl dd{
+      height: 105px; font-size: 14px; padding: 15px 30px; box-sizing: border-box;
+      background: #e3e3e3; border-top: 1px solid #969696; text-align: left;
+    }
+
+    /* 짝수번째 줄 스타일 (.even이라는 규칙을 만듦)*/
+    .product-list .even dl{height: 200px; border: 0; background: #006633;}
+    .product-list .even dl dt{height: 80px; color: #fff;}
+    .product-list .even dl dd{background: none; border: 0; color: #fff;}
+
+
+  </style>
+</head>
+<body>
+  <section class="center">
+    <div class="title">
+      <h2>COFFEE</h2>
+    </div>
+    <div class="product-list">
+      <!-- ul>li>div[class="img-box"]>div[class="wrap"]>img+div[class="over"]-->
+      <ul>
+        <li>
+          <div class="img-box">
+            <div class="wrap">
+              <img src="img/coffee.jpg" alt="">
+              <div class="over">
+                <button class="fas fa-search">
+                  <span class="skip">자세히보기</span>
+                </button>
+              </div>
+            </div>
+            <span>new</span>
+          </div>
+          <dl>
+            <dt>
+              <b>나이트로 쇼콜라</b>
+              <span>Nitro chocolat</span>
+            </dt>
+            <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀바디값의 새로운 나이트로 콜드 브루</dd>
+          </dl>
+        </li>
+        <li>
+          <div class="img-box">
+            <div class="wrap">
+              <img src="img/coffee.jpg" alt="">
+              <div class="over">
+                <button class="fas fa-search">
+                  <span class="skip">자세히보기</span>
+                </button>
+              </div>
+            </div>
+            <span>new</span>
+          </div>
+          <dl>
+            <dt>
+              <b>나이트로 쇼콜라</b>
+              <span>Nitro chocolat</span>
+            </dt>
+            <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀바디값의 새로운 나이트로 콜드 브루</dd>
+          </dl>
+        </li>
+        <li>
+          <div class="img-box">
+            <div class="wrap">
+              <img src="img/coffee.jpg" alt="">
+              <div class="over">
+                <button class="fas fa-search">
+                  <span class="skip">자세히보기</span>
+                </button>
+              </div>
+            </div>
+            <span>new</span>
+          </div>
+          <dl>
+            <dt>
+              <b>나이트로 쇼콜라</b>
+              <span>Nitro chocolat</span>
+            </dt>
+            <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀바디값의 새로운 나이트로 콜드 브루</dd>
+          </dl>
+        </li>
+        <li class="even">
+          <div class="img-box">
+            <div class="wrap">
+              <img src="img/coffee.jpg" alt="">
+              <div class="over">
+                <button class="fas fa-search">
+                  <span class="skip">자세히보기</span>
+                </button>
+              </div>
+            </div>
+            <span>new</span>
+          </div>
+          <dl>
+            <dt>
+              <b>나이트로 쇼콜라</b>
+              <span>Nitro chocolat</span>
+            </dt>
+            <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀바디값의 새로운 나이트로 콜드 브루</dd>
+          </dl>
+        </li>
+        <li class="even">
+          <div class="img-box">
+            <div class="wrap">
+              <img src="img/coffee.jpg" alt="">
+              <div class="over">
+                <button class="fas fa-search">
+                  <span class="skip">자세히보기</span>
+                </button>
+              </div>
+            </div>
+            <span>new</span>
+          </div>
+          <dl>
+            <dt>
+              <b>나이트로 쇼콜라</b>
+              <span>Nitro chocolat</span>
+            </dt>
+            <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀바디값의 새로운 나이트로 콜드 브루</dd>
+          </dl>
+        </li>
+        <li class="even">
+          <div class="img-box">
+            <div class="wrap">
+              <img src="img/coffee.jpg" alt="">
+              <div class="over">
+                <button class="fas fa-search">
+                  <span class="skip">자세히보기</span>
+                </button>
+              </div>
+            </div>
+            <span>new</span>
+          </div>
+          <dl>
+            <dt>
+              <b>나이트로 쇼콜라</b>
+              <span>Nitro chocolat</span>
+            </dt>
+            <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀바디값의 새로운 나이트로 콜드 브루</dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

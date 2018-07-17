@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .skip{font-size: 0; text-indent: -9999px; position: absolute; left:-9999px;}
+    .center{position: relative; width: 960px; margin: 0 auto;}
+    button{border: 0; background: none;}
+
+    header{background: #000; height: 100px; text-align: center;} /* text-align: center; -> 안하면 반응형으로 모바일에서 활용도 높음*/
+    header .center{width: 1200px;}
+    header h1{padding-top: 20px;}
+    header .btn-menu{position: absolute; left:30px; top:35px;}
+    header .btn-search{position: absolute; right:30px; top:35px;}
+    header i{color:#fff; font-size: 30px;}
+
+    section.center{margin: 100px auto;}
+    .photo-list .row::after{content: ''; display: block; clear: both; overflow: hidden;}
+    .photo-list .row img{float: left;}
+    .photo-list .row img:nth-child(1){margin-right: 30px;}
+    .photo-list .col{float: left; width: 300px; margin-right: 30px;}
+    .photo-list .col:last-child{margin-right: 0;}
+    .photo-list .col img{margin: 30px 0 0 0; vertical-align: top;} /* 사진들을 수직으로 넣다보면 알수없는 여백이 생길때 vertical-align: top;이걸 써야함! */
+  </style>
+</head>
+<body>
+  <header>
+    <div class="center">
+      <h1><img src="img/beyonce-logo.jpg" alt="beyonce"></h1>
+      <button class="btn-menu"><i class="fas fa-bars"></i><span class="skip">메뉴</span></button>
+      <button class="btn-search"><i class="fas fa-search"></i><span class="skip">검색</span></button>
+    </div>
+  </header>
+  <section class="center">
+    <article class="photo-list">
+      <div class="row"> <!-- row -> 행(가로줄)-->
+        <img src="img/beyonce1.jpg" alt="img/beyonce1.jpg">
+        <img src="img/beyonce2.jpg" alt="img/beyonce2.jpg">
+      </div>
+      <div class="row">
+        <div class="col">
+          <img src="img/beyonce3.jpg" alt="img/beyonce3.jpg">
+          <img src="img/beyonce4.jpg" alt="img/beyonce4.jpg">
+        </div>
+        <div class="col"> <!-- col -> 열(세로줄)-->
+          <img src="img/beyonce5.jpg" alt="img/beyonce5.jpg">
+          <img src="img/beyonce6.jpg" alt="img/beyonce6.jpg">
+        </div>
+        <div class="col">
+          <img src="img/beyonce7.jpg" alt="img/beyonce7.jpg">
+        </div>
+      </div>
+    </article>
+  </section>
+</body>
+</html>

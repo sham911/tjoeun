@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+  <style>
+    /* reset, common */
+    *{margin: 0; padding: 0;}
+    li{list-style: none;}
+    a{text-decoration: none; color:#000;}
+    button{border: 0; }
+    body{font-family: 'Nanum Gothic', sans-serif;}
+    .center{position: relative; width: 960px; margin: 0 auto;} /*공식!! - 최대폭 960px에 margin 으로 중앙정렬*/
+    .skip{font-size: 0; text-indent: -9999px; position: absolute; left:-9999px;} /* text-indent: -9999px; position: absolute; left:-9999px; 화면밖으로 보내버리기(안전장치)*/
+
+    /* header */
+    header{background: #f3f2ec; height: 200px;}
+    header .center{height: 200px;}
+    header h1{padding-top: 50px;}
+    header ul{position: absolute; top:140px; right: 0;}
+    header ul li{float: left; padding-left: 60px; }
+    header ul li a{font-size: 14px; text-transform: uppercase;} /* text-transform: uppercase;-> 소문자를 대문자로 변경 / text-transform: lowercase; 대문자를 소문자로 변경*/
+    header ul li a:hover{color: #06704b;}
+
+    /* section */
+    section{}
+    .slide{position: relative;}
+    .slide .slide-list{height: 470px; overflow: hidden;}
+     /* .slide .slide-list li에 float: left;를 써줬으니 clear: both;를 써야하는데
+     이 위에 .slide .slide-list인 곳에 overflow: hidden;을 써줬음. (overflow: hidden; = clear: both;와 같음)*/
+    .slide .slide-list li{
+      float: left; width: 100%; height: 100%;
+      background-position: center; background-repeat: no-repeat;
+    }
+    .slide .slide-list li:nth-child(1){background-image: url(img/slide1.jpg);}
+    .slide .slide-list li:nth-child(2){background-image: url(img/slide1.jpg);}
+    .slide .slide-list li:nth-child(3){background-image: url(img/slide1.jpg);}
+    .slide .pagination{
+      position: absolute; left: 50%; transform: translateX(-50%);
+      bottom: 14px;
+    }
+    .slide .pagination li{float: left; padding: 0 8px;}
+    .slide .pagination li a{display: block; width: 16px; height: 16px;
+      border-radius: 50%; border: 3px solid #006633; box-sizing: border-box; background: #fff;
+    }
+    .slide .pagination li.active a{
+      background: #006633; border: 0;
+    }
+
+    .product-list{margin: 30px auto; padding-bottom: 100px;}
+    .product-list::after{content:''; display: block; overflow: hidden; clear: both;}
+    /* .product-list ul -> 여기에 overflow: hidden;을 주니깐 그림자가 되어있던 박스 밑이 잘리는 현상이 생겨서
+      위에 있는 .product-list::after에  content:'';, clear: both;를 쓰고 overflow: hidden;도 쓴다.
+     */
+    .product-list ul{margin:0 -15px; }
+    /* .product-list ul li{float: left; width: 33.33%; text-align: center;}  -> 이게 싫으면 ↓ 이렇게 두줄 쓰기*/
+    .product-list ul li{float: left; margin-bottom: 30px; width: 33.33%; text-align: center;}
+    .product-list ul li:nth-child(3n){margin-right: 0;} /* 마지막박스의 오른쪽 여백만 값없음*/
+    .product-list ul li .wrap{
+      position: relative; width: 300px; height: 600px;
+      background: #fff; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      /* 원래 성질이 block이면 가운데 정렬이 안되므로 인라인으로 성질변경하기! (위에 .product-list ul li 안에 text-align:center;가 있기에) */
+      display: inline-block;
+    }
+    .product-list ul li:nth-child(even) .wrap{background: #003a19;} /* even -> 짝수로 (밑에 더있을걸 예상해서 써줌)*/
+    .product-list ul li .wrap img{width: 100%;}
+    .product-list ul li .wrap dl{padding-top: 40px; }
+    .product-list ul li:nth-child(even) .wrap dl{color: #fff;}
+    .product-list ul li .wrap dl dt{padding-bottom: 40px;}
+    .product-list ul li .wrap dl dt b{font-size: 21px; display: block;}
+    .product-list ul li .wrap dl dt span{font-size: 18px;}
+    .product-list ul li .wrap dl dd{padding: 0 30px; font-size: 14px; text-align: left;}
+    .product-list ul li .wrap button{
+      position: absolute; left: 50%; transform:translateX(-50%);
+      bottom: 30px; width: 160px; height: 50px; background: #006633; font-size: 16px;
+      font-weight: bold; color: #fff;
+    }
+    .product-list ul li:nth-child(even) .wrap button{background: #fff; color: #006633;}
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="center">
+      <h1><img src="img/starbucks-logo.png" alt="스타벅스 로고"></h1>
+      <ul>
+        <!-- li*5>a[href=#] -->
+        <li><a href="#">coffee</a></li>
+        <li><a href="#">menu</a></li>
+        <li><a href="#">responsibility</a></li>
+        <li><a href="#">my starbucks rewards</a></li>
+        <li><a href="#">what's new</a></li>
+      </ul>
+    </div>
+  </header>
+  <section>
+    <article class="slide">
+      <ul class="slide-list">
+        <li><a href="#"><span class="skip">show your flavor - 뉴그린티 프라푸치노, ...</span></a></li>
+        <li><a href="#"><span class="skip">두번째슬라이드 내용작성</span></a></li>
+        <li><a href="#"><span class="skip">세번째슬라이드 내용작성</span></a></li>
+      </ul>
+      <!-- ul>li*3>a[href=#]>span[class=skip] -->
+      <ul class="pagination"> <!-- 페이징 버튼 -->
+        <li class="active"><a href="#"><span class="skip">1</span></a></li>
+        <li><a href="#"><span class="skip">2</span></a></li>
+        <li><a href="#"><span class="skip">3</span></a></li>
+      </ul>
+    </article>
+
+    <article class="product-list center">
+      <!-- ul>li>div[class=wrap]>img+(dl>dt(b+span)+dd)+button -->
+      <ul>
+        <li>
+          <div class="wrap">
+            <img src="img/coffee.jpg" alt="">
+            <dl>
+              <dt>
+                <b>나이트로쇼콜라</b>
+                <span>Nitro Chocholat</span>
+              </dt>
+              <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀 바디값의 새로운 나이트로 콜드 브루</dd>
+            </dl>
+            <button>나만의 음료로 등록</button>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <img src="img/coffee.jpg" alt="">
+            <dl>
+              <dt>
+                <b>나이트로쇼콜라</b>
+                <span>Nitro Chocholat</span>
+              </dt>
+              <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀 바디값의 새로운 나이트로 콜드 브루</dd>
+            </dl>
+            <button>나만의 음료로 등록</button>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <img src="img/coffee.jpg" alt="">
+            <dl>
+              <dt>
+                <b>나이트로쇼콜라</b>
+                <span>Nitro Chocholat</span>
+              </dt>
+              <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀 바디값의 새로운 나이트로 콜드 브루</dd>
+            </dl>
+            <button>나만의 음료로 등록</button>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <img src="img/coffee.jpg" alt="">
+            <dl>
+              <dt>
+                <b>나이트로쇼콜라</b>
+                <span>Nitro Chocholat</span>
+              </dt>
+              <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀 바디값의 새로운 나이트로 콜드 브루</dd>
+            </dl>
+            <button>나만의 음료로 등록</button>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <img src="img/coffee.jpg" alt="">
+            <dl>
+              <dt>
+                <b>나이트로쇼콜라</b>
+                <span>Nitro Chocholat</span>
+              </dt>
+              <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀 바디값의 새로운 나이트로 콜드 브루</dd>
+            </dl>
+            <button>나만의 음료로 등록</button>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <img src="img/coffee.jpg" alt="">
+            <dl>
+              <dt>
+                <b>나이트로쇼콜라</b>
+                <span>Nitro Chocholat</span>
+              </dt>
+              <dd>초콜릿과 견과류의 풍미, 초콜릿 파우더 토핑, 풀 바디값의 새로운 나이트로 콜드 브루</dd>
+            </dl>
+            <button>나만의 음료로 등록</button>
+          </div>
+        </li>
+      </ul>
+    </article>
+  </section>
+</body>
+</html>
