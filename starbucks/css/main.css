@@ -246,7 +246,7 @@ header nav ul li a:hover{
 	font-size: 22px;
 	color: #4d4d4d;
 	text-transform: uppercase;
-	letter-spacing: 50;
+	letter-spacing: 50px;
 }
 
 .services ul li p{
@@ -292,7 +292,7 @@ header nav ul li a:hover{
 
 #video{
   width: 686px;
-  box-shadow: 0 0 5px 5px rgba(243,241,239););
+  box-shadow: 0 0 5px 5px rgba(243,241,239);
 }
 body.fullscreen .ex_video{
   position: fixed; width: 100%; height: 100%;
@@ -317,7 +317,7 @@ button{
   left: -99999px;
 }
 
-#play-control{margin: 10px auto};
+#play-control{margin: 10px auto;}
 
 /*  Recent work  */
 .recent_work{
@@ -397,7 +397,6 @@ button{
 	border-top: 1px #e7e7e7 solid;
 	border-bottom: 1px #e7e7e7 solid;
 	text-align: center;
-	margin-top: 450px;
   margin-bottom: 100px;
 }
 
