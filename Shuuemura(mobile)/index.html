@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>shu uemura</title>
+  <!-- css -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/css.css">
+  <!-- script-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/js.js"></script>
+</head>
+<body>
+  <ul id="skipnav">
+    <li>
+      <a href="#nav">주메뉴바로가기</a>
+    </li>
+    <li>
+      <a href="#container main">본문바로가기</a>
+    </li>
+  </ul>
+  <!-- <script>
+
+      function brandopen(val){
+
+        if(val == 0){
+          if(document.getElementById("sub").style.display == "none"){
+            $("#sub").css("display","block");
+          }else{
+            $("#sub").css("display","none");
+          }
+        }else if(val == 1){
+          if(document.getElementById("br1").style.display == "none"){
+            $("#br1").css("display","block");
+          }else{
+            $("#br1").css("display","none");
+          }
+        }else if(val == 2){
+          if(document.getElementById("br2").style.display == "none"){
+            $("#br2").css("display","block");
+          }else{
+            $("#br2").css("display","none");
+          }
+        }
+
+      }
+
+      function productlist(val){
+        location.href = "/new/Productlist.asp?category="+val;
+      }
+
+      function searchProduct(){
+        /*
+        searchVal = $("#searchVal").val();
+        location.href = "/new/Search.asp?searchVal="+searchVal;
+        */
+         $( "#searchFrm" ).submit();
+      }
+
+      $(function(){
+        //
+        $('.head .menu').on('click', function(){
+          $('.dimmed').show();
+          $('.gnbWrap').animate({
+            left: 0
+          });
+        });
+
+        //
+        $('.gnbWrap .btnClose').on('click', function(){
+          $('.dimmed').hide();
+          $('.gnbWrap').animate({
+            left: "-100%"
+          });
+        });
+
+        //
+        $('.navList a').on('click', function(){
+          if($(this).parent('li').hasClass('on')){
+            $(this).parent('li').removeClass('on');
+          } else {
+            $(this).parent('li').addClass('on');
+          }
+        });
+      })
+  </script> -->
+  <div id="wrap">
+    <header>
+      <div class="head">
+        <div class="icons">
+          <a href="#" class="menu"><i class="material-icons">dehaze</i></a>
+          <a href="#" class="location_on"><i class="material-icons">location_on</i></a>
+          <a href="#" class="search"><i class="material-icons">search</i></a>
+          <a href="#" class="language">KO<i class="material-icons">arrow_drop_down</i></a>
+        </div>
+        <h1>
+          <a href="#"><img src="img/shuuemura_logo.jpg" alt="shuuemura"></a>
+        </h1>
+      </div>
+    </header>
+    <!-- gnb -->
+    <div class="gnbWrap">
+      <div id="dimBg"></div>
+      <div class="gnb">
+        <h1><a href=""><img src="img/shuuemura_logo.jpg" alt="shuuemura"></a></h1>
+        <!-- 로그인 -->
+        <div class="login">
+          <a href="#"><span>로그인</span></a>
+          <span>로그인하시면 이벤트에 참여하실 수 있습니다.</span>
+        </div>
+        <nav id="nav">
+          <h2 class="skip">주메뉴</h2>
+          <ul class="navList">
+            <li class="on">
+              <a href="#">
+                <span>What's new</span><i class="material-icons">keyboard_arrow_right</i>
+              </a>
+              <ul class="depth2">
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>NEW 번트 오렌지 컬렉션</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>NEW 프레쉬 쿠션 블러셔</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>NEW 스테이지 퍼포머 프레쉬 탑코트 메이크업 픽스 미스트</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>NEW 스테이지 퍼포머 올인원 인스턴트 메이크업 프렙 마스크</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>이 달의 프로모션</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="">BEST</a>
+            </li>
+            <li>
+              <a href="#">
+                <span>PRODUCT</span><i class="material-icons">keyboard_arrow_right</i>
+              </a>
+              <ul class="depth2">
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>Skincare</span><i class="material-icons">add</i>
+                  </a>
+                  <ul class="depth3">
+                    <li><a href=""><span>클렌징</span></a></li>
+                    <li><a href=""><span>모이스춰라이징</span></a></li>
+                    <li><a href=""><span>얼티메이트</span></a></li>
+                    <li><a href=""><span>화이트닝</span></a></li>
+                    <li><a href=""><span>모공케어</span></a></li>
+                    <li><a href=""><span>안티에이징</span></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>Make up</span><i class="material-icons">add</i>
+                  </a>
+                  <ul class="depth3">
+                    <li><a href=""><span>페이스</span></a></li>
+                    <li><a href=""><span>치크</span></a></li>
+                    <li><a href=""><span>아이</span></a></li>
+                    <li><a href=""><span>립</span></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>Tools</span><i class="material-icons">add</i>
+                  </a>
+                  <ul class="depth3">
+                    <li><a href="#"><span>브러쉬</span></a></li>
+                    <li><a href="#"><span>액세서리</span></a></li>
+                    <li><a href="#"><span>도쿄 래쉬 바</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">
+                <span>BRAND</span><i class="material-icons">keyboard_arrow_right</i>
+              </a>
+              <ul class="depth2">
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>Discover shu uemura</span><i class="material-icons">add</i>
+                  </a>
+                  <ul class="depth3">
+                    <li><a href=""><span>아트 오브 뷰티</span></a></li>
+                    <li><a href=""><span>메이크업 아티스트</span></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>Shu Maina</span><i class="material-icons">add</i>
+                  </a>
+                  <ul class="depth3">
+                    <li><a href=""><span>VIP 프로그램</span></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="material-icons">keyboard_arrow_right</i><span>Sketch Movie</span></a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">EVENT</a>
+            </li>
+          </ul>
+          <div class="reservMU">
+            <a href="#" class="point"><span>포인트</span></a>
+            ㅣ
+            <a href="#" class="buy"><span>구매하기</span></a>
+          </div>
+        </nav>
+      </div>
+      <button><i class="material-icons">clear</i></button>
+    </div>
+    <div class="dimmed"></div>
+    <!-- // gnb -->
+
+    <div id="container_main">
+      <div class="tab">
+        <div class="m_left">
+          <span></span>
+          <a href="#">메이크업</a>
+        </div>
+        <div class="s_right">
+          <span></span>
+          <a href="#">스킨케어</a>
+        </div>
+      </div>
+      <section id="m1">
+        <div class="rollingArea">
+          <div class="swiper-container rolling_imglist">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide"><img src="img/20180619_22657283.PNG" alt="banner1"></li>
+              <li class="swiper-slide"><img src="img/20180705_11280329.jpg" alt="banner2"></li>
+              <li class="swiper-slide"><img src="img/20180705_29818741.jpg" alt="banner3"></li>
+              <li class="swiper-slide"><img src="img/20180705_65801000.jpg" alt="banner4"></li>
+            </ul>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="mini_nav">
+            <ul>
+              <li><a href=""><img src="img/rip.png" alt=""><span>슈마니아</span></a></li>
+              <li><a href=""><i class="material-icons">subscriptions</i><span>뷰티영상</span></a></li>
+              <li><a href=""><i class="material-icons">card_giftcard</i><span>멤버십</span></a></li>
+              <li><a href=""><i class="material-icons">event</i><span>캘린더</span></a></li>
+            </ul>
+          </div>
+          <div class="rolling_newitem">
+            <div class="rolling_newitem_text">
+              <h3>NEW ITEM</h3>
+            </div>
+            <div class="swiper-container rolling_newitem_imglist">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/unlimited-supreme-matte-yazbukey-carmen-bound.png" alt="supreme-matte-yazbukey-carmen-bound">
+                    <span>NEW 야즈부키 매티튜드 컬렉션 3.4g</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/Fresh_cushion_blusher.png" alt="Fresh_cushion_blusher">
+                    <span>NEW 프레쉬 쿠션 블러셔 7g</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/Burnt_Orange_Collection.png" alt="Burnt_Orange_Collection">
+                    <span>NEW 번트 오렌지 컬렉션 3.4g</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/Point_sealer.PNG" alt="Point_sealer">
+                    <span>포인트 실러 2.22ml</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"><i class="material-icons">keyboard_arrow_left</i></div>
+              <div class="swiper-button-next"><i class="material-icons">keyboard_arrow_right</i></div>
+            </div>
+          </div>
+          <div class="rolling_bestitem">
+            <div class="rolling_bestitem_text">
+              <h3>BEST ITEM</h3>
+            </div>
+            <div class="swiper-container rolling_bestitem_imglist">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/PetalSkinFluidFoundation.png" alt="PetalSkinFluidFoundation">
+                    <span>모공 파운데이션 30ml</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/SHU_18_HardFormula_SealBrown_Packshot.png" alt="HardFormula">
+                    <span>하드 포뮬라 4g</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/glow_on.png" alt="glow_on">
+                    <span>글로우 온 (리필+케이스) 4g</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/Pressed_eye_shadow.png" alt="Pressed_eye_shadow">
+                    <span>NEW프레스드 아이섀도우 (리필+케이스) 1.4g</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"><i class="material-icons">keyboard_arrow_left</i></div>
+              <div class="swiper-button-next"><i class="material-icons">keyboard_arrow_right</i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="m2">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/IMih9oqr5G4?ecver=1&controls=0&autoplay=1&showinfo=0&rel=0&loop=1&modestbranding=1&controls=1 " frameborder="0"  allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section>
+        <div id="m3">
+          <div class="ranking_box">
+            <div class="ranking_box_text">
+              <h3>WEEK'S BEST RANKING</h3>
+            </div>
+            <div class="swiper-container ranking_box_imglist">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best01_170307.jpg" alt="best01">
+                    <strong>1위</strong><span>클렌징 오일</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best02_160730.jpg" alt="best02">
+                    <strong>2위</strong><span>페탈 파운데이션</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best03_180117.jpg" alt="best03">
+                    <strong>3위</strong><span>루즈 언리미티드</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best04_160712.jpg" alt="best04">
+                    <strong>4위</strong><span>스킨 퍼펙터</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best05_160712.jpg" alt="best05">
+                    <strong>5위</strong><span>쿠션 파운데이션</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best06_160712.jpg" alt="best06">
+                    <strong>6위</strong><span>라끄 슈프림</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best07_180117.jpg" alt="best07">
+                    <strong>7위</strong><span>브로우:스워드</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best08_160712.jpg" alt="best08">
+                    <strong>8위</strong><span>글로우 온</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best09_160712.jpg" alt="best09">
+                    <strong>9위</strong><span>오토 젤 라이너</span>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="img/img_best10_160712.jpg" alt="best10">
+                    <strong>10위</strong><span>아이 섀도우</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="swiper-scrollbar"></div>
+            </div>
+            <button>Learn more »</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section id="m4">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/IMih9oqr5G4?ecver=1&controls=0&autoplay=1&showinfo=0&rel=0&loop=1&modestbranding=1&controls=1 " frameborder="0"  allowfullscreen></iframe>
+        </div>
+      </section> -->
+
+
+    <footer></footer>
+  </div>
+
+</body>
+</html>
